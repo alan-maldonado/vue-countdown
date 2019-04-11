@@ -1,9 +1,16 @@
 <template>
-  <div class="home">Home</div>
+  <div>
+    <select-date/>
+  </div>
 </template>
 
 <script>
+import SelectDate from '../components/SelectDate'
+
 export default {
-  name: 'home'
+  name: 'home',
+  components: {
+    SelectDate
+  }
 }
 </script>
