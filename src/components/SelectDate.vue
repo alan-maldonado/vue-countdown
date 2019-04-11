@@ -2,7 +2,6 @@
   <div>
     <h3>Pick a date to create your countdown</h3>
     <datetime v-model="date" type="datetime"></datetime>
-
     <router-link :to="countdownLink">Get your link</router-link>
   </div>
 </template>
