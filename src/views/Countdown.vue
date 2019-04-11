@@ -1,8 +1,13 @@
 <template>
   <div>
-    <h3>Countdown until: {{ date }}</h3>
-    <counter-boxes :date="date"/>
-    <create-another/>
+    <header class="bg-dark">
+      <h3 class="container">Countdown until: {{ date }}</h3>
+    </header>
+
+    <div class="container">
+      <counter-boxes :date="date"/>
+      <create-another/>
+    </div>
   </div>
 </template>
 

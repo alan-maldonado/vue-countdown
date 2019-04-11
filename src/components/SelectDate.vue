@@ -1,9 +1,15 @@
 <template>
-  <div>
-    <h3>Pick a date to create your countdown</h3>
-    <datetime v-model="date" type="datetime"></datetime>
-    <router-link :to="countdownLink">Get your link</router-link>
-  </div>
+  <section class="bg-light">
+    <div class="container">
+      <datetime
+        v-model="date"
+        type="datetime"
+        input-class="datetime-input"
+        placeholder="pick a date"
+      ></datetime>
+      <router-link class="btn btn-primary" :to="countdownLink">Get your link</router-link>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -16,13 +22,13 @@ export default {
   },
   data () {
     return {
-      date: null
+      date: ''
     }
   },
   computed: {
     countdownLink () {
       if (!this.date) {
-        return null
+        return ''
       }
 
       return `/${encodeURIComponent(this.date)}`

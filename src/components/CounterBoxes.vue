@@ -1,19 +1,20 @@
 <template>
   <div>
-    <div v-if="completed">
+    <div id="status-legend" v-if="completed">
       <h4>Yay!! You have reached your countdown</h4>
     </div>
-    <div v-else>
-      <CounterBox v-model="days" legend="days"/>
-      <CounterBox v-model="hours" legend="hours"/>
-      <CounterBox v-model="minutes" legend="minutes"/>
-      <CounterBox v-model="seconds" legend="seconds"/>
+    <div class="boxes-list" v-else>
+      <counter-box v-model="days" legend="days"/>
+      <counter-box v-model="hours" legend="hours"/>
+      <counter-box v-model="minutes" legend="minutes"/>
+      <counter-box v-model="seconds" legend="seconds"/>
     </div>
   </div>
 </template>
 
 <script>
 import CounterBox from './CounterBox'
+import { clearInterval } from 'timers'
 export default {
   name: 'counter-boxes',
   components: {
@@ -51,7 +52,10 @@ export default {
   },
   created () {
     this.computeDate()
-    setInterval(this.computeDate, 1000)
+    const timer = setInterval(this.computeDate, 1000)
+    if (this.completed) {
+      clearInterval(timer)
+    }
   }
 }
 </script>

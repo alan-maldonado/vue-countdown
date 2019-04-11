@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <p>{{value}}</p>
     <p>{{legend}}</p>
   </div>

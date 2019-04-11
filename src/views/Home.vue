@@ -1,5 +1,8 @@
 <template>
   <div>
+    <header class="bg-dark">
+      <h3 class="container">Countdown</h3>
+    </header>
     <select-date/>
   </div>
 </template>
